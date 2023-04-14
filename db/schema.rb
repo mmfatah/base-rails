@@ -10,6 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2023_04_14_170533) do
+
+  create_table "buildings", force: :cascade do |t|
+    t.string "address"
+    t.string "name"
+    t.integer "user_id"
+    t.integer "users_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.integer "upvotes"
+    t.integer "user_id"
+    t.integer "issues_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "issues", force: :cascade do |t|
+    t.string "status"
+    t.text "description"
+    t.integer "user_id"
+    t.integer "comments_count"
+    t.integer "users_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "role_type"
+    t.integer "user_id"
+    t.integer "users_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "phone"
+    t.string "profile_photo"
+    t.integer "roles_id"
+    t.integer "issues_id"
+    t.integer "building_id"
+    t.integer "roles_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
