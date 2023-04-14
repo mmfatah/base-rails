@@ -1,0 +1,65 @@
+<h1>Sign up</h1>
+
+<form action="/insert_user" method="post">
+
+  <div>
+    <label for="email_box">Email</label>
+    <input id="email_box" name="query_email" placeholder="Choose a email..." type="text">
+  </div>
+                 
+  <div>
+    <label for="phone_box">Phone</label>
+      
+    <input type="text" id="phone_box" name="query_phone">
+  </div>
+         
+  <div>
+    <label for="profile_photo_box">Profile photo</label>
+      
+    <input type="text" id="profile_photo_box" name="query_profile_photo">
+  </div>
+         
+  <div>
+    <label for="roles_id_box">Roles</label>
+      
+    <input type="text" id="roles_id_box" name="query_roles_id">
+  </div>
+         
+  <div>
+    <label for="issues_id_box">Issues</label>
+      
+    <input type="text" id="issues_id_box" name="query_issues_id">
+  </div>
+         
+  <div>
+    <label for="building_id_box">Building</label>
+      
+    <input type="text" id="building_id_box" name="query_building_id">
+  </div>
+         
+  <div>
+    <label for="roles_count_box">Roles count</label>
+      
+    <input type="text" id="roles_count_box" name="query_roles_count">
+  </div>
+    
+  <div>
+    <label for="password_box">Password</label>
+    <input id="password_box" name="query_password" placeholder="Choose a password..." type="password">
+  </div>
+
+  <div>
+    <label for="password_confirmation_box">Password Confirmation</label>
+    <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+  </div>
+
+  <button>
+    Sign up
+  </button>
+</form>
+
+<hr>
+
+<p>
+  Or, <a href="/user_sign_in">Sign in</a> instead.
+</p>

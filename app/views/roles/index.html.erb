@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all roles
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new role
+    </h2>
+
+    <form action="/insert_role" method="post">
+      <div>
+        <label for="role_type_box">
+          Role type
+        </label>
+
+        <input type="text" id="role_type_box" name="query_role_type">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="users_count_box">
+          Users count
+        </label>
+
+        <input type="text" id="users_count_box" name="query_users_count">
+      </div>
+
+      <button>
+        Create role
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Role type
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Users count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_roles.each do |a_role| %>
+      <tr>
+        <td>
+          <%= a_role.id %>
+        </td>
+
+        <td>
+          <%= a_role.role_type %>
+        </td>
+
+        <td>
+          <%= a_role.user_id %>
+        </td>
+
+        <td>
+          <%= a_role.users_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_role.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_role.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/roles/<%= a_role.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

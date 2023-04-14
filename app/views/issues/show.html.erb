@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Issue #<%= @the_issue.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/issues">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_issue/<%= @the_issue.id %>">
+          Delete issue
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Status
+      </dt>
+      <dd>
+        <%= @the_issue.status %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_issue.description %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_issue.user_id %>
+      </dd>
+
+      <dt>
+        Comments count
+      </dt>
+      <dd>
+        <%= @the_issue.comments_count %>
+      </dd>
+
+      <dt>
+        Users count
+      </dt>
+      <dd>
+        <%= @the_issue.users_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_issue.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_issue.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit issue
+    </h2>
+
+    <form action="/modify_issue/<%= @the_issue.id %>"  method="post" >
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status" value="<%= @the_issue.status %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description"><%= @the_issue.description %></textarea>
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_issue.user_id %>">
+      </div>
+
+      <div>
+        <label for="comments_count_box">
+          Comments count
+        </label>
+
+        <input type="text" id="comments_count_box" name="query_comments_count" value="<%= @the_issue.comments_count %>">
+      </div>
+
+      <div>
+        <label for="users_count_box">
+          Users count
+        </label>
+
+        <input type="text" id="users_count_box" name="query_users_count" value="<%= @the_issue.users_count %>">
+      </div>
+
+      <button>
+        Update issue
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

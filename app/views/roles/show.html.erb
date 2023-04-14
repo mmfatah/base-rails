@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Role #<%= @the_role.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/roles">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_role/<%= @the_role.id %>">
+          Delete role
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Role type
+      </dt>
+      <dd>
+        <%= @the_role.role_type %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_role.user_id %>
+      </dd>
+
+      <dt>
+        Users count
+      </dt>
+      <dd>
+        <%= @the_role.users_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_role.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_role.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit role
+    </h2>
+
+    <form action="/modify_role/<%= @the_role.id %>"  method="post" >
+      <div>
+        <label for="role_type_box">
+          Role type
+        </label>
+
+        <input type="text" id="role_type_box" name="query_role_type" value="<%= @the_role.role_type %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_role.user_id %>">
+      </div>
+
+      <div>
+        <label for="users_count_box">
+          Users count
+        </label>
+
+        <input type="text" id="users_count_box" name="query_users_count" value="<%= @the_role.users_count %>">
+      </div>
+
+      <button>
+        Update role
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
